@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Takeover - PoC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background: rgba(0,0,0,0.8);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .highlight {
+            background: #ff4757;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .details {
+            background: #2f3542;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .timestamp {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚨 SUBDOMAIN TAKEOVER DETECTED 🚨</h1>
+        
+        <div class="highlight">
+            <h2>PROOF OF CONCEPT</h2>
+            <p><strong>Subdomain:</strong> node.nonkyc.io</p>
+            <p><strong>Taken over by:</strong> Security Researcher</p>
+            <p><strong>Method:</strong> GitHub Pages</p>
+        </div>
+
+        <div class="details">
+            <h3>🔍 Technical Details:</h3>
+            <ul>
+                <li><strong>Domain:</strong> node.nonkyc.io</li>
+                <li><strong>Status:</strong> Dangling DNS record</li>
+                <li><strong>Service:</strong> GitHub Pages</li>
+                <li><strong>Risk:</strong> Critical</li>
+                <li><strong>Impact:</strong> Complete subdomain control</li>
+            </ul>
+        </div>
+
+        <div class="details">
+            <h3>⚡ Attack Scenario:</h3>
+            <p>An attacker could:</p>
+            <ul>
+                <li>Serve malicious content on company subdomain</li>
+                <li>Harvest credentials via fake login pages</li>
+                <li>Damage company reputation</li>
+                <li>Conduct phishing attacks</li>
+                <li>Bypass security controls trusting the domain</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h3>🛡️ REMEDIATION</h3>
+            <p>Remove unused DNS records or point to valid resources</p>
+        </div>
+
+        <div class="timestamp">
+            <p>Discovered: <span id="datetime"></span></p>
+            <p>Browser: <span id="browser"></span></p>
+            <p>IP: <span id="ip">Visitor IP would be logged</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Display current date/time
+        document.getElementById('datetime').textContent = new Date().toLocaleString();
+        
+        // Display browser info
+        document.getElementById('browser').textContent = navigator.userAgent;
+        
+        // In a real attack, this would log visitor information
+        console.log('Subdomain takeover PoC - visitor logged');
+    </script>
+</body>
+</html>
